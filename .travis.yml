@@ -4,12 +4,11 @@ sudo: required
 
 go:
   - 1.x
-go_import_path: k8s.io/minikube
+go_import_path: k8s.io/minikube/minikube
 
 install:
   - echo "Don't run anything."
 script:
-  - cd /home/travis/gopath/src/k8s.io/
   - git clone https://github.com/kubernetes/minikube.git
   - cd minikube
 
