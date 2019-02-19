@@ -9,6 +9,8 @@ go_import_path: k8s.io/minikube
 install:
   - echo "Don't run anything."
 script:
+  - cd ..
+  - rm -r minikube
   - git clone https://github.com/kubernetes/minikube.git
   - cd minikube
   - make
