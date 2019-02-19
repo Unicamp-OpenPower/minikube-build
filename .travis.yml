@@ -12,6 +12,7 @@ script:
   - cd ..
   - rm -rf -f minikube
   - git clone https://github.com/kubernetes/minikube.git
+  - cd minikube
   - make
   - make test
 after_success:
