@@ -1,9 +1,9 @@
 language: go
-os: linux-ppc64le
+os: linux
+arch: ppc64le
 sudo: required
 
-go:
-  - 1.x
+go: 1.13.x
 
 before_install:
   - sudo apt-get install -y libvirt-dev
@@ -17,3 +17,10 @@ script:
   - make
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  slack:
+    rooms:
+      - secure: "O4F0zd5nbv0YN9kErll+vAjCwsOcd0kpIN0A+rXREe3tXtn4zc7oVGPLwQwT+hNsz9xxAwrXj+p+Eb2eRO196O67koTDJgWR7xRdyx3dR/9ypAmivW9OHO9WTNEUZK+AYnHAHwhjUe+Rvk5I1wDBwsBO1X7tBajK33WDz8AyMY5vmDilkRh6uTYFfQGhvkc3dJndq9za0hXmxk6bWiOhGoZda+EI1ViPTWG8nW4mXDQlM6fDZbWkL7MFT8OprqzF+iyG4NJeKEdwG4WpwR5oYfHDxef50UUEmgu9DJdyKI+bvdZvUoS4c3vducfPWqnDb6qQCfbi8VQY+cfE/1G5SwrddvHuRnz0KcHccE1kJDMOMbB8fuQxAZ8nJXJESDQIOmo5dJ908J1IV2THv8Di2AY4PpDkR9YJAmsZJXRTC6pABc5j/Dxma1Vsqv1nPOpdmPCZgBkloLJig41MUOjq4+y1J0pPiDTFHGbRnsqDDDizPWEcpEYnqbBtEfn7MtrckIRzCH1MNIO99AI4BwpDCmolfjGE7FRwSMjlEeexPFwP+yfNS7uMsC2Wd0zCCf1D/wmexU37Zcl6wDKNBSVmHAHcN+YuNRx92tIobIakyx0fKvZlmp4dk6QyNQq3EP5CiWvnKN/v9MHFfUkWwdM1i89hbjwG38ZOLGmC0t8+iPA="
+    on_success: change
+    on_failure: change
