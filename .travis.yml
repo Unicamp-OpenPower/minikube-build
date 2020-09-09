@@ -12,6 +12,7 @@ script:
   - git clone https://github.com/kubernetes/minikube.git
   - cd minikube
   - make
+  - cd out
   - ./minikube version
 
 notifications:
