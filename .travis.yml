@@ -1,10 +1,10 @@
 language: go
 os: linux
 arch: ppc64le
-dist: bionic
+dist: focal
 sudo: required
 
-go: "1.14.x"
+go: "1.16.x"
 
 before_install:
   - sudo apt-get install -y libvirt-dev
