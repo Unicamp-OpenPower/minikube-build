@@ -4,7 +4,7 @@ arch: ppc64le
 dist: focal
 sudo: required
 
-go: "1.16.x"
+go: "1.17.x"
 
 before_install:
   - sudo apt-get install -y libvirt-dev
